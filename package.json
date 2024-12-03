@@ -1,0 +1,15 @@
+{
+  "name": "cardapio-online-burguer",
+  "version": "1.0.0",
+  "description": "Projeto cardápio online do zero em HTML, CSS, Tailwind e JavaScript - Sujeito Programador",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./styles/style.css -o ./styles/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}
