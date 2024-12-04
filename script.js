@@ -135,8 +135,23 @@ addressInput.addEventListener("input", function(Event){
 checkoutBtn.addEventListener("click", function(){
 
     const isOpen = checkRestaurantOpen();
-    if (isOpen) {
-        alert("Restaurante fechado no momento!")
+    //const isOpen = false; Para testar a mensagem
+    if (!isOpen) {
+
+        Toastify({
+            text: "Ops! O restaurante está fechado!",
+            duration: 3000,
+            //destination: "https://github.com/apvarun/toastify-js",
+            //newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "#EF4444",
+            },
+        }).showToast();
+
         return;
     }
 
@@ -147,7 +162,20 @@ checkoutBtn.addEventListener("click", function(){
         return;
     }
 
+    const cartItems = cart.map((item) => {
+        return (
+            `${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`
+        )
+    }).join("")
+    //console.log(cartItems)
+
     //Enviar o pedido para API Whats App
+    const message = encodeURIComponent(cartItems)
+    const phone = "1234567890"
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    
+    cart = [];
+    updateCartModal();
 })
 
 //Verificar a hora e manipular o card horario
@@ -171,5 +199,3 @@ if(isOpen) {
     spanItem.classList.remove("bg-green-600");
     spanItem.classList.add("bg-red-500");
 }
-
-//Retomar video 1:22:23
