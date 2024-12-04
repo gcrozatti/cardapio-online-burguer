@@ -22,7 +22,7 @@
             />
         <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Dev Burguer</h1>
         <span class="text-white font-medium">R. Dev. de Sucesso, 10 - CDN, Campinas-SP</span>
-            <div class="bg-green-500 px-4 py-1 rounded-lg mt-5 id="date-span">
+            <div class="bg-green-500 px-4 py-1 rounded-lg mt-5" id="date-span">
                 <span class="text-white font-medium">Seg à Dom - 18h00 as 22h00</span>
             </div>
         </div>
@@ -46,7 +46,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 18,90</p>
                         <button
-                            class="bg-gray-900 px-5 rounded add-to-cart-brn"
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Double Burguer Cheese Salad"
                             data-price="18.90"
                         >
@@ -69,7 +69,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 32,90</p>
                         <button
-                            class="bg-gray-900 px-5 rounded add-to-cart-brn"
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Double Burguer Cheese Bacon"
                             data-price="32.90"
                         >
@@ -92,7 +92,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 35,90</p>
                         <button
-                            class="bg-gray-900 px-5 rounded add-to-cart-brn"
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Double Cheese Burguer"
                             data-price="35.90"
                         >
@@ -116,7 +116,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 24,90</p>
                         <button
-                            class="bg-gray-900 px-5 rounded add-to-cart-brn"
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Chicken Salad"
                             data-price="24.90"
                         >
@@ -146,7 +146,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 4,50</p>
                         <button
-                            class="bg-gray-900 px-5 rounded add-to-cart-brn"
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Coca-Cola 350ml"
                             data-price="4.50"
                         >
@@ -169,7 +169,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 4,50</p>
                         <button
-                            class="bg-gray-900 px-5 rounded add-to-cart-brn"
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Coca-Cola 350ml"
                             data-price="4.50"
                         >
@@ -182,7 +182,10 @@
     </div> <!--endStoreMenus-->
 
     <!--Modal Cart-->
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center hidden"> 
+    <div 
+        class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+        id="cart-modal"
+    >
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
             <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
 
@@ -201,22 +204,19 @@
                 <button id="close-modal-btn">Fechar</button>
                 <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
             </div>
-
         </div>
-        
-    </div>
+    </div> <!--endModal Cart-->
 
     <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
         <button
             class="flex items-center gap-2 text-white font-bold"
             id="cart-btn"
         >
-            (<span id="cart-count">2</span>)
+            (<span id="cart-count">0</span>)
                 Veja meu carrinho
             <i class="fa fa-cart-plus text-lg text-white"></i>
         </button>
     </footer>
-<!--Retomar no minuto 56:49 -->
-
+<script src="./script.js"></script>
 </body>
 </html>
